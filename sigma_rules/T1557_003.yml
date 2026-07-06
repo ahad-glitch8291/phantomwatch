@@ -1,0 +1,25 @@
+title: 'PhantomWatch: DHCP Spoofing'
+id: PW-T1557-003
+status: experimental
+description: 'Detects DHCP Spoofing (T1557.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1557/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1557_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - spoofing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,25 @@
+title: 'PhantomWatch: RC Scripts'
+id: PW-T1037-004
+status: experimental
+description: 'Detects RC Scripts (T1037.004). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS, Linux, Network Devices, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1037/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - scripts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

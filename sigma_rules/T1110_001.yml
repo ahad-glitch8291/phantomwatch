@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Password Guessing'
+id: PW-T1110-001
+status: experimental
+description: 'Detects Password Guessing (T1110.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - guessing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

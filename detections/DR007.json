@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR007",
+  "name": "Login Item Persistence via osascript",
+  "technique_ids": ["T1547.001", "T1547"],
+  "keywords": ["make login item", "System Events", "osascript"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}

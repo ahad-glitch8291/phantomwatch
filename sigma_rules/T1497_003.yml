@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Time Based Checks'
+id: PW-T1497-003
+status: experimental
+description: 'Detects Time Based Checks (T1497.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1497/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1497_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - based
+    - checks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

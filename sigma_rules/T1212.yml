@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Exploitation for Credential Access'
+id: PW-T1212
+status: experimental
+description: 'Detects Exploitation for Credential Access (T1212). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, Windows, macOS, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1212/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1212
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - exploitation
+    - credential
+    - access
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

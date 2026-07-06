@@ -1,0 +1,39 @@
+title: 'PhantomWatch: Multi-Factor Authentication Request Generation'
+id: PW-T1621
+status: experimental
+description: 'Detects Multi-Factor Authentication Request Generation (T1621). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, IaaS, SaaS,
+  Office Suite, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1621/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.credential_access
+- attack.t1621
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - multi-factor
+    - authentication
+    - request
+    - generation
+  condition: (selection) and not (filter_system)
+  filter_system:
+    User|contains:
+    - root
+    - _securityagent
+    - _keychaind
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Remote System Discovery'
+id: PW-T1018
+status: experimental
+description: 'Detects Remote System Discovery (T1018). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1018/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1018
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - remote
+    - system
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

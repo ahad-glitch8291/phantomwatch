@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Application Window Discovery'
+id: PW-T1010
+status: experimental
+description: 'Detects Application Window Discovery (T1010). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1010/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1010
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - application
+    - window
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

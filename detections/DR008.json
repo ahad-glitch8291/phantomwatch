@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR008",
+  "name": "Keychain Enumeration via security Binary",
+  "technique_ids": ["T1555.001", "T1555"],
+  "keywords": ["security list-keychains", "security dump-keychain", "security find-certificate"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}

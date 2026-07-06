@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Input Injection'
+id: PW-T1674
+status: experimental
+description: 'Detects Input Injection (T1674). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1674/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1674
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - input
+    - injection
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

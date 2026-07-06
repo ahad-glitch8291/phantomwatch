@@ -1,0 +1,36 @@
+title: 'PhantomWatch: Login Hook'
+id: PW-T1037-002
+status: experimental
+description: 'Detects Login Hook (T1037.002). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1037/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_002
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - login
+  condition: (selection) and not (filter_legit)
+  filter_legit:
+    TargetFilename|contains:
+    - com.apple.
+    - com.google.
+    - com.microsoft.
+    - homebrew
+    - Homebrew
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

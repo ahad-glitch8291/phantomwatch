@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Keychain'
+id: PW-T1555-001
+status: experimental
+description: 'Detects Keychain (T1555.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1555/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/02
+tags:
+- attack.credential-access
+- attack.t1555_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - keychain
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Launchctl'
+id: PW-T1569-001
+status: experimental
+description: 'Detects Launchctl (T1569.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1569/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1569_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - launchctl
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

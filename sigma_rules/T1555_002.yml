@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Securityd Memory'
+id: PW-T1555-002
+status: experimental
+description: 'Detects Securityd Memory (T1555.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1555/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1555_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - securityd
+    - memory
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

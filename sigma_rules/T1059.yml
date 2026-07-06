@@ -1,0 +1,28 @@
+title: 'PhantomWatch: Command and Scripting Interpreter'
+id: PW-T1059
+status: experimental
+description: 'Detects Command and Scripting Interpreter (T1059). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider,
+  Linux, macOS, Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - command
+    - scripting
+    - interpreter
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Credential Stuffing'
+id: PW-T1110-004
+status: experimental
+description: 'Detects Credential Stuffing (T1110.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credential
+    - stuffing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

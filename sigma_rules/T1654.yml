@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Log Enumeration'
+id: PW-T1654
+status: experimental
+description: 'Detects Log Enumeration (T1654). Auto-generated from PhantomWatch simulation
+  gap. Platforms: ESXi, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1654/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1654
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - enumeration
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

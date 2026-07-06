@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Shell History'
+id: PW-T1552-003
+status: experimental
+description: 'Detects Shell History (T1552.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1552/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1552_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+    - history
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

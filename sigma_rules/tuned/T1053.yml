@@ -1,0 +1,38 @@
+title: 'PhantomWatch: Scheduled Task/Job'
+id: PW-T1053
+status: experimental
+description: 'Detects Scheduled Task/Job (T1053). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1053/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1053
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - scheduled
+    - task/job
+  condition: (selection) and not (filter_dev)
+  filter_dev:
+    CommandLine|contains:
+    - venv
+    - pytest
+    - pip install
+    - brew
+    - xcode
+    - Xcode
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

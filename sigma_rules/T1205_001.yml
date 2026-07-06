@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Port Knocking'
+id: PW-T1205-001
+status: experimental
+description: 'Detects Port Knocking (T1205.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1205/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1205_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - knocking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

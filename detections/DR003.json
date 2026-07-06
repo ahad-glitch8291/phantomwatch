@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR003",
+  "name": "Python Inline Execution via -c Flag",
+  "technique_ids": ["T1059.006"],
+  "keywords": ["python3 -c", "python -c", "exec(base64"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}

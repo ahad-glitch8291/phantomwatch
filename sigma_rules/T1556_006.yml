@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Multi-Factor Authentication'
+id: PW-T1556-006
+status: experimental
+description: 'Detects Multi-Factor Authentication (T1556.006). Auto-generated from
+  PhantomWatch simulation gap. Platforms: IaaS, Identity Provider, Linux, macOS, Office
+  Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1556/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556_006
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - multi-factor
+    - authentication
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

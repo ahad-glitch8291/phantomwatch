@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Pluggable Authentication Modules'
+id: PW-T1556-003
+status: experimental
+description: 'Detects Pluggable Authentication Modules (T1556.003). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1556/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - pluggable
+    - authentication
+    - modules
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

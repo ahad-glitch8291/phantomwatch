@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Server Software Component'
+id: PW-T1505
+status: experimental
+description: 'Detects Server Software Component (T1505). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS, Network Devices, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1505/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1505
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - server
+    - software
+    - component
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

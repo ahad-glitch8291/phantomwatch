@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Backup Software Discovery'
+id: PW-T1518-002
+status: experimental
+description: 'Detects Backup Software Discovery (T1518.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1518/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1518_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - backup
+    - software
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,36 @@
+title: 'PhantomWatch: Wi-Fi Discovery'
+id: PW-T1016-002
+status: experimental
+description: 'Detects Wi-Fi Discovery (T1016.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1016/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1016_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - wi-fi
+    - discovery
+  condition: (selection) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

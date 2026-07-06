@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Startup Items'
+id: PW-T1037-005
+status: experimental
+description: 'Detects Startup Items (T1037.005). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1037/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_005
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - startup
+    - items
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

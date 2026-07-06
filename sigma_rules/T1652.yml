@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Device Driver Discovery'
+id: PW-T1652
+status: experimental
+description: 'Detects Device Driver Discovery (T1652). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1652/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1652
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - device
+    - driver
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

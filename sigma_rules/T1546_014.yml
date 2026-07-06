@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Emond'
+id: PW-T1546-014
+status: experimental
+description: 'Detects Emond (T1546.014). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/014/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_014
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - emond
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

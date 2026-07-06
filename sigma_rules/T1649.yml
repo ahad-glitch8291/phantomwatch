@@ -1,0 +1,28 @@
+title: 'PhantomWatch: Steal or Forge Authentication Certificates'
+id: PW-T1649
+status: experimental
+description: 'Detects Steal or Forge Authentication Certificates (T1649). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1649/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1649
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - steal
+    - forge
+    - authentication
+    - certificates
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

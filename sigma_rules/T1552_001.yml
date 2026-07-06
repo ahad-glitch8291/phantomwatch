@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Credentials In Files'
+id: PW-T1552-001
+status: experimental
+description: 'Detects Credentials In Files (T1552.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1552/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/02
+tags:
+- attack.credential-access
+- attack.t1552_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credentials
+    - files
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

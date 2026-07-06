@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Network Service Discovery'
+id: PW-T1046
+status: experimental
+description: 'Detects Network Service Discovery (T1046). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, IaaS, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1046/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1046
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - network
+    - service
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

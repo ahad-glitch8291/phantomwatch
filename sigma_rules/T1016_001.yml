@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Internet Connection Discovery'
+id: PW-T1016-001
+status: experimental
+description: 'Detects Internet Connection Discovery (T1016.001). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1016/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1016_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - internet
+    - connection
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

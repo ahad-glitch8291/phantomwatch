@@ -1,0 +1,38 @@
+title: 'PhantomWatch: Permission Groups Discovery'
+id: PW-T1069
+status: experimental
+description: 'Detects Permission Groups Discovery (T1069). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, IaaS, Identity Provider, Linux, macOS, Office
+  Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1069/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1069
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - permission
+    - groups
+    - discovery
+  condition: (selection) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

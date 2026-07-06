@@ -1,0 +1,39 @@
+title: 'PhantomWatch: Process Discovery'
+id: PW-T1057
+status: experimental
+description: 'Detects Process Discovery (T1057). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1057/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1057
+- attack.discovery
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  sel_1:
+    Image|endswith:
+    - ps
+  sel_2:
+    CommandLine|contains:
+    - ps aux
+    - ps -axo pid,ppid
+  condition: (sel_1 and sel_2) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,37 @@
+title: 'PhantomWatch: System Service Discovery'
+id: PW-T1007
+status: experimental
+description: 'Detects System Service Discovery (T1007). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1007
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - service
+    - discovery
+  condition: (selection) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

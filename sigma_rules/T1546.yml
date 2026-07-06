@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Event Triggered Execution'
+id: PW-T1546
+status: experimental
+description: 'Detects Event Triggered Execution (T1546). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows, SaaS, IaaS, Office Suite.'
+references:
+- https://attack.mitre.org/techniques/T1546/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - event
+    - triggered
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

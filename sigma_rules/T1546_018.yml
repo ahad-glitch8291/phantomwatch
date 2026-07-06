@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Python Startup Hooks'
+id: PW-T1546-018
+status: experimental
+description: 'Detects Python Startup Hooks (T1546.018). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1546/018/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1546_018
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - python
+    - startup
+    - hooks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

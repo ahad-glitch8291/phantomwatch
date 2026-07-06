@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR004",
+  "name": "Bash Inline or Encoded Execution",
+  "technique_ids": ["T1059.004"],
+  "keywords": ["bash -c", "base64 --decode | bash", "/dev/tcp/"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}

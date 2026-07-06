@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Web Cookies'
+id: PW-T1606-001
+status: experimental
+description: 'Detects Web Cookies (T1606.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows, SaaS, IaaS.'
+references:
+- https://attack.mitre.org/techniques/T1606/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1606_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - cookies
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

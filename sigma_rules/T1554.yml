@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Compromise Host Software Binary'
+id: PW-T1554
+status: experimental
+description: 'Detects Compromise Host Software Binary (T1554). Auto-generated from
+  PhantomWatch simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1554/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1554
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - compromise
+    - software
+    - binary
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

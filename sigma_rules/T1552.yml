@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Unsecured Credentials'
+id: PW-T1552
+status: experimental
+description: 'Detects Unsecured Credentials (T1552). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, SaaS, IaaS, Linux, macOS, Containers, Network
+  Devices, Office Suite, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1552/
+author: PhantomWatch (auto-generated)
+date: 2026/07/02
+tags:
+- attack.credential-access
+- attack.t1552
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - unsecured
+    - credentials
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

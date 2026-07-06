@@ -1,0 +1,38 @@
+title: 'PhantomWatch: System Services'
+id: PW-T1569
+status: experimental
+description: 'Detects System Services (T1569). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1569/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1569
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - services
+  condition: (selection) and not (filter_dev)
+  filter_dev:
+    CommandLine|contains:
+    - venv
+    - pytest
+    - pip install
+    - brew
+    - xcode
+    - Xcode
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

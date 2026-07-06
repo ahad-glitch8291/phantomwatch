@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Re-opened Applications'
+id: PW-T1547-007
+status: experimental
+description: 'Detects Re-opened Applications (T1547.007). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1547/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_007
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - re-opened
+    - applications
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,25 @@
+title: 'PhantomWatch: SSH Authorized Keys'
+id: PW-T1098-004
+status: experimental
+description: 'Detects SSH Authorized Keys (T1098.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Network Devices.'
+references:
+- https://attack.mitre.org/techniques/T1098/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1098_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - authorized
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

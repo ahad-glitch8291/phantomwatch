@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Power Settings'
+id: PW-T1653
+status: experimental
+description: 'Detects Power Settings (T1653). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, Linux, macOS, Network Devices.'
+references:
+- https://attack.mitre.org/techniques/T1653/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1653
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - power
+    - settings
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

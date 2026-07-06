@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Unix Shell Configuration Modification'
+id: PW-T1546-004
+status: experimental
+description: 'Detects Unix Shell Configuration Modification (T1546.004). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+    - configuration
+    - modification
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

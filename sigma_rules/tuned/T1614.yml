@@ -1,0 +1,37 @@
+title: 'PhantomWatch: System Location Discovery'
+id: PW-T1614
+status: experimental
+description: 'Detects System Location Discovery (T1614). Auto-generated from PhantomWatch
+  simulation gap. Platforms: IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1614/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1614
+- attack.discovery
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - location
+    - discovery
+  condition: (selection) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

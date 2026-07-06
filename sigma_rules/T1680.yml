@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Local Storage Discovery'
+id: PW-T1680
+status: experimental
+description: 'Detects Local Storage Discovery (T1680). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1680/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1680
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - storage
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

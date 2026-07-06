@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Lua'
+id: PW-T1059-011
+status: experimental
+description: 'Detects Lua (T1059.011). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, Network Devices, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1059/011/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_011
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1059_011
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

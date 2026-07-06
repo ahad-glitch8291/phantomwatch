@@ -1,0 +1,37 @@
+title: 'PhantomWatch: Steal Web Session Cookie'
+id: PW-T1539
+status: experimental
+description: 'Detects Steal Web Session Cookie (T1539). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1539/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.credential_access
+- attack.t1539
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - steal
+    - session
+    - cookie
+  condition: (selection) and not (filter_system)
+  filter_system:
+    User|contains:
+    - root
+    - _securityagent
+    - _keychaind
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

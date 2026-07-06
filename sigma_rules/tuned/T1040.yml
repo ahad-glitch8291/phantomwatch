@@ -1,0 +1,36 @@
+title: 'PhantomWatch: Network Sniffing'
+id: PW-T1040
+status: experimental
+description: 'Detects Network Sniffing (T1040). Auto-generated from PhantomWatch simulation
+  gap. Platforms: IaaS, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1040/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1040
+- attack.credential_access
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - network
+    - sniffing
+  condition: (selection) and not (filter_system)
+  filter_system:
+    User|contains:
+    - root
+    - _securityagent
+    - _keychaind
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

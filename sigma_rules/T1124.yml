@@ -1,0 +1,26 @@
+title: 'PhantomWatch: System Time Discovery'
+id: PW-T1124
+status: experimental
+description: 'Detects System Time Discovery (T1124). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1124/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1124
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

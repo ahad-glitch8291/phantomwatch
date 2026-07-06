@@ -1,0 +1,29 @@
+title: 'PhantomWatch: System Network Connections Discovery'
+id: PW-T1049
+status: experimental
+description: 'Detects System Network Connections Discovery (T1049). Auto-generated
+  from PhantomWatch simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Network Devices,
+  Windows.'
+references:
+- https://attack.mitre.org/techniques/T1049/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1049
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - network
+    - connections
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

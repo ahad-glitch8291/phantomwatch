@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Valid Accounts'
+id: PW-T1078
+status: experimental
+description: 'Detects Valid Accounts (T1078). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS, Network
+  Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1078/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1078
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - valid
+    - accounts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Visual Basic'
+id: PW-T1059-005
+status: experimental
+description: 'Detects Visual Basic (T1059.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - visual
+    - basic
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Traffic Signaling'
+id: PW-T1205
+status: experimental
+description: 'Detects Traffic Signaling (T1205). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1205/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1205
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - traffic
+    - signaling
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

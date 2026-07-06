@@ -1,0 +1,37 @@
+title: 'PhantomWatch: Password Spraying'
+id: PW-T1110-003
+status: experimental
+description: 'Detects Password Spraying (T1110.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, Network
+  Devices, Office Suite, SaaS, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.credential_access
+- attack.t1110_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - spraying
+  condition: (selection) and not (filter_system)
+  filter_system:
+    User|contains:
+    - root
+    - _securityagent
+    - _keychaind
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Ccache Files'
+id: PW-T1558-005
+status: experimental
+description: 'Detects Ccache Files (T1558.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1558/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1558_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - ccache
+    - files
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

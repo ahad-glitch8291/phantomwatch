@@ -1,0 +1,30 @@
+title: 'PhantomWatch: Credential API Hooking'
+id: PW-T1056-004
+status: experimental
+description: 'Detects Credential API Hooking (T1056.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1056/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1056_004
+- attack.collection
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credential
+    - hooking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,37 @@
+title: 'PhantomWatch: JavaScript'
+id: PW-T1059-007
+status: experimental
+description: 'Detects JavaScript (T1059.007). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_007
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - javascript
+  condition: (selection) and not (filter_dev)
+  filter_dev:
+    CommandLine|contains:
+    - venv
+    - pytest
+    - pip install
+    - brew
+    - xcode
+    - Xcode
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

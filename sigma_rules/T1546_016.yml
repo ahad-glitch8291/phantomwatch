@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Installer Packages'
+id: PW-T1546-016
+status: experimental
+description: 'Detects Installer Packages (T1546.016). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1546/016/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_016
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - installer
+    - packages
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

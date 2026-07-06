@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Input Capture'
+id: PW-T1056
+status: experimental
+description: 'Detects Input Capture (T1056). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1056/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - input
+    - capture
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

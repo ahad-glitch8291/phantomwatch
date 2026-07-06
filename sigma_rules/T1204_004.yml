@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Malicious Copy and Paste'
+id: PW-T1204-004
+status: experimental
+description: 'Detects Malicious Copy and Paste (T1204.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1204/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - malicious
+    - paste
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

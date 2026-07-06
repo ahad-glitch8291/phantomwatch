@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR006",
+  "name": "Launch Agent Persistence via LaunchAgents Directory",
+  "technique_ids": ["T1543.001", "T1543"],
+  "keywords": ["LaunchAgents", "launchctl load", "RunAtLoad"],
+  "log_source": "file_event",
+  "confidence": "high",
+  "enabled": true
+}

@@ -1,0 +1,30 @@
+title: 'PhantomWatch: Debugger Evasion'
+id: PW-T1622
+status: experimental
+description: 'Detects Debugger Evasion (T1622). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1622/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1622
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - debugger
+    - evasion
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

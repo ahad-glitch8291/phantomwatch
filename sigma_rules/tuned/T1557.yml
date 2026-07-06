@@ -1,0 +1,35 @@
+title: 'PhantomWatch: Adversary-in-the-Middle'
+id: PW-T1557
+status: experimental
+description: 'Detects Adversary-in-the-Middle (T1557). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1557/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.credential_access
+- attack.t1557
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - adversary-in-the-middle
+  condition: (selection) and not (filter_system)
+  filter_system:
+    User|contains:
+    - root
+    - _securityagent
+    - _keychaind
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: high
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,25 @@
+title: 'PhantomWatch: User Execution'
+id: PW-T1204
+status: experimental
+description: 'Detects User Execution (T1204). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, Windows, macOS, IaaS, Containers.'
+references:
+- https://attack.mitre.org/techniques/T1204/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

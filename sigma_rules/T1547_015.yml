@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Login Items'
+id: PW-T1547-015
+status: experimental
+description: 'Detects Login Items (T1547.015). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1547/015/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_015
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - login
+    - items
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

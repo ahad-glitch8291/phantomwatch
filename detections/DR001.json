@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR001",
+  "name": "System Information Discovery via uname/sw_vers",
+  "technique_ids": ["T1082"],
+  "keywords": ["uname", "sw_vers", "system_profiler"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}

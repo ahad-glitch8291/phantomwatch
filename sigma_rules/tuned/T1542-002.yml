@@ -1,0 +1,30 @@
+title: 'PhantomWatch: Component Firmware'
+id: PW-T1542-002
+status: experimental
+description: 'Detects Component Firmware (T1542.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1542/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1542_002
+- attack.stealth
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - component
+    - firmware
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: medium
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

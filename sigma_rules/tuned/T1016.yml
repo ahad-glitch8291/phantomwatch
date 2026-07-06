@@ -1,0 +1,42 @@
+title: 'PhantomWatch: System Network Configuration Discovery'
+id: PW-T1016
+status: experimental
+description: 'Detects System Network Configuration Discovery (T1016). Auto-generated
+  from PhantomWatch simulation gap. Platforms: ESXi, Linux, macOS, Network Devices,
+  Windows.'
+references:
+- https://attack.mitre.org/techniques/T1016/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1016
+- attack.discovery
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  sel_1:
+    Image|endswith:
+    - ifconfig
+    - netstat
+    - arp
+    - scutil
+  sel_2:
+    CommandLine|contains:
+    - /etc/hosts
+  condition: (sel_1 and sel_2) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

@@ -1,0 +1,38 @@
+title: 'PhantomWatch: Password Policy Discovery'
+id: PW-T1201
+status: experimental
+description: 'Detects Password Policy Discovery (T1201). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS, IaaS, Network Devices, Identity
+  Provider, SaaS, Office Suite.'
+references:
+- https://attack.mitre.org/techniques/T1201/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.t1201
+- attack.discovery
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - policy
+    - discovery
+  condition: (selection) and not (filter_admin)
+  filter_admin:
+    User|contains:
+    - root
+    - admin
+    - _spotlight
+    - _mdnsresponder
+falsepositives:
+- Legitimate administrative activity
+- Security tooling (CrowdStrike, SentinelOne, osquery)
+- Developer environments (venv, brew, Xcode)
+- System processes (com.apple.*)
+level: low
+tuned: true
+tuned_at: 2026/07/06
+tuning_version: '1.0'

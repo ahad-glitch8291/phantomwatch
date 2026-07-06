@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Kernel Modules and Extensions'
+id: PW-T1547-006
+status: experimental
+description: 'Detects Kernel Modules and Extensions (T1547.006). Auto-generated from
+  PhantomWatch simulation gap. Platforms: macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1547/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_006
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - kernel
+    - modules
+    - extensions
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

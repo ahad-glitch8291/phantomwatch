@@ -1,0 +1,3854 @@
+# PhantomWatch Sigma Rule Bundle
+# Generated: 2026-07-06T22:44:02.629700+00:00
+# Rules: 131
+# ────────────────────────────────────────────────────────────
+
+title: 'PhantomWatch: System Owner/User Discovery'
+id: PW-T1033
+status: experimental
+description: 'Detects System Owner/User Discovery (T1033). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1033/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1033
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - owner/user
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Internet Connection Discovery'
+id: PW-T1016-001
+status: experimental
+description: 'Detects Internet Connection Discovery (T1016.001). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1016/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1016_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - internet
+    - connection
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Permission Groups Discovery'
+id: PW-T1069
+status: experimental
+description: 'Detects Permission Groups Discovery (T1069). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, IaaS, Identity Provider, Linux, macOS, Office
+  Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1069/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1069
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - permission
+    - groups
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Device Driver Discovery'
+id: PW-T1652
+status: experimental
+description: 'Detects Device Driver Discovery (T1652). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1652/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1652
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - device
+    - driver
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Domain Account'
+id: PW-T1087-002
+status: experimental
+description: 'Detects Domain Account (T1087.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1087/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1087_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - domain
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Local Account'
+id: PW-T1087-001
+status: experimental
+description: 'Detects Local Account (T1087.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1087/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1087_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Checks'
+id: PW-T1497-001
+status: experimental
+description: 'Detects System Checks (T1497.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1497/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1497_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - checks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Domain Groups'
+id: PW-T1069-002
+status: experimental
+description: 'Detects Domain Groups (T1069.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1069/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1069_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - domain
+    - groups
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Service Discovery'
+id: PW-T1007
+status: experimental
+description: 'Detects System Service Discovery (T1007). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1007
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - service
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Network Sniffing'
+id: PW-T1040
+status: experimental
+description: 'Detects Network Sniffing (T1040). Auto-generated from PhantomWatch simulation
+  gap. Platforms: IaaS, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1040/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1040
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - network
+    - sniffing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Network Share Discovery'
+id: PW-T1135
+status: experimental
+description: 'Detects Network Share Discovery (T1135). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1135/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1135
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - network
+    - share
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Peripheral Device Discovery'
+id: PW-T1120
+status: experimental
+description: 'Detects Peripheral Device Discovery (T1120). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1120/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1120
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - peripheral
+    - device
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Wi-Fi Discovery'
+id: PW-T1016-002
+status: experimental
+description: 'Detects Wi-Fi Discovery (T1016.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1016/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1016_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - wi-fi
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Backup Software Discovery'
+id: PW-T1518-002
+status: experimental
+description: 'Detects Backup Software Discovery (T1518.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1518/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1518_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - backup
+    - software
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Application Window Discovery'
+id: PW-T1010
+status: experimental
+description: 'Detects Application Window Discovery (T1010). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1010/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1010
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - application
+    - window
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Time Based Checks'
+id: PW-T1497-003
+status: experimental
+description: 'Detects Time Based Checks (T1497.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1497/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1497_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - based
+    - checks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Browser Information Discovery'
+id: PW-T1217
+status: experimental
+description: 'Detects Browser Information Discovery (T1217). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1217/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1217
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - browser
+    - information
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Virtual Machine Discovery'
+id: PW-T1673
+status: experimental
+description: 'Detects Virtual Machine Discovery (T1673). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1673/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1673
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - virtual
+    - machine
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Network Configuration Discovery'
+id: PW-T1016
+status: experimental
+description: 'Detects System Network Configuration Discovery (T1016). Auto-generated
+  from PhantomWatch simulation gap. Platforms: ESXi, Linux, macOS, Network Devices,
+  Windows.'
+references:
+- https://attack.mitre.org/techniques/T1016/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1016
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  sel_1:
+    Image|endswith:
+    - ifconfig
+    - netstat
+    - arp
+    - scutil
+  sel_2:
+    CommandLine|contains:
+    - /etc/hosts
+  condition: sel_1 and sel_2
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Account Discovery'
+id: PW-T1087
+status: experimental
+description: 'Detects Account Discovery (T1087). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Identity Provider, Linux, macOS, Office Suite,
+  SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1087/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1087
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - account
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Network Connections Discovery'
+id: PW-T1049
+status: experimental
+description: 'Detects System Network Connections Discovery (T1049). Auto-generated
+  from PhantomWatch simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Network Devices,
+  Windows.'
+references:
+- https://attack.mitre.org/techniques/T1049/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1049
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - network
+    - connections
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Virtualization/Sandbox Evasion'
+id: PW-T1497
+status: experimental
+description: 'Detects Virtualization/Sandbox Evasion (T1497). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1497/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1497
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - virtualization/sandbox
+    - evasion
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Log Enumeration'
+id: PW-T1654
+status: experimental
+description: 'Detects Log Enumeration (T1654). Auto-generated from PhantomWatch simulation
+  gap. Platforms: ESXi, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1654/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1654
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - enumeration
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Process Discovery'
+id: PW-T1057
+status: experimental
+description: 'Detects Process Discovery (T1057). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1057/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1057
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  sel_1:
+    Image|endswith:
+    - ps
+  sel_2:
+    CommandLine|contains:
+    - ps aux
+    - ps -axo pid,ppid
+  condition: sel_1 and sel_2
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: User Activity Based Checks'
+id: PW-T1497-002
+status: experimental
+description: 'Detects User Activity Based Checks (T1497.002). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1497/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1497_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - activity
+    - based
+    - checks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Local Groups'
+id: PW-T1069-001
+status: experimental
+description: 'Detects Local Groups (T1069.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1069/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1069_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - groups
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Password Policy Discovery'
+id: PW-T1201
+status: experimental
+description: 'Detects Password Policy Discovery (T1201). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS, IaaS, Network Devices, Identity
+  Provider, SaaS, Office Suite.'
+references:
+- https://attack.mitre.org/techniques/T1201/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1201
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - policy
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Language Discovery'
+id: PW-T1614-001
+status: experimental
+description: 'Detects System Language Discovery (T1614.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1614/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1614_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - language
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Location Discovery'
+id: PW-T1614
+status: experimental
+description: 'Detects System Location Discovery (T1614). Auto-generated from PhantomWatch
+  simulation gap. Platforms: IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1614/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1614
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - location
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Security Software Discovery'
+id: PW-T1518-001
+status: experimental
+description: 'Detects Security Software Discovery (T1518.001). Auto-generated from
+  PhantomWatch simulation gap. Platforms: IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1518/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1518_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - security
+    - software
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Remote System Discovery'
+id: PW-T1018
+status: experimental
+description: 'Detects Remote System Discovery (T1018). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1018/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1018
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - remote
+    - system
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Network Service Discovery'
+id: PW-T1046
+status: experimental
+description: 'Detects Network Service Discovery (T1046). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, IaaS, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1046/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1046
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - network
+    - service
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Software Discovery'
+id: PW-T1518
+status: experimental
+description: 'Detects Software Discovery (T1518). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1518/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1518
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - software
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Debugger Evasion'
+id: PW-T1622
+status: experimental
+description: 'Detects Debugger Evasion (T1622). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1622/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1622
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - debugger
+    - evasion
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Local Storage Discovery'
+id: PW-T1680
+status: experimental
+description: 'Detects Local Storage Discovery (T1680). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1680/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1680
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - storage
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Time Discovery'
+id: PW-T1124
+status: experimental
+description: 'Detects System Time Discovery (T1124). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1124/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1124
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Shared Modules'
+id: PW-T1129
+status: experimental
+description: 'Detects Shared Modules (T1129). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1129/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1129
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shared
+    - modules
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Path Interception by PATH Environment Variable'
+id: PW-T1574-007
+status: experimental
+description: 'Detects Path Interception by PATH Environment Variable (T1574.007).
+  Auto-generated from PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1574/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1574_007
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - interception
+    - environment
+    - variable
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: JavaScript'
+id: PW-T1059-007
+status: experimental
+description: 'Detects JavaScript (T1059.007). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_007
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - javascript
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Malicious File'
+id: PW-T1204-002
+status: experimental
+description: 'Detects Malicious File (T1204.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1204/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - malicious
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Cron'
+id: PW-T1053-003
+status: experimental
+description: 'Detects Cron (T1053.003). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1053/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1053_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1053_003
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Scheduled Task/Job'
+id: PW-T1053
+status: experimental
+description: 'Detects Scheduled Task/Job (T1053). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1053/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1053
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - scheduled
+    - task/job
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: AppleScript'
+id: PW-T1059-002
+status: experimental
+description: 'Detects AppleScript (T1059.002). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1059/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - applescript
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Dynamic Linker Hijacking'
+id: PW-T1574-006
+status: experimental
+description: 'Detects Dynamic Linker Hijacking (T1574.006). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1574/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1574_006
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - dynamic
+    - linker
+    - hijacking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Input Injection'
+id: PW-T1674
+status: experimental
+description: 'Detects Input Injection (T1674). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1674/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1674
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - input
+    - injection
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Command and Scripting Interpreter'
+id: PW-T1059
+status: experimental
+description: 'Detects Command and Scripting Interpreter (T1059). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider,
+  Linux, macOS, Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - command
+    - scripting
+    - interpreter
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Malicious Library'
+id: PW-T1204-005
+status: experimental
+description: 'Detects Malicious Library (T1204.005). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1204/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - malicious
+    - library
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Launchctl'
+id: PW-T1569-001
+status: experimental
+description: 'Detects Launchctl (T1569.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1569/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1569_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - launchctl
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: XPC Services'
+id: PW-T1559-003
+status: experimental
+description: 'Detects XPC Services (T1559.003). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1559/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1559_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - services
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: User Execution'
+id: PW-T1204
+status: experimental
+description: 'Detects User Execution (T1204). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, Windows, macOS, IaaS, Containers.'
+references:
+- https://attack.mitre.org/techniques/T1204/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Software Deployment Tools'
+id: PW-T1072
+status: experimental
+description: 'Detects Software Deployment Tools (T1072). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1072/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1072
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - software
+    - deployment
+    - tools
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Inter-Process Communication'
+id: PW-T1559
+status: experimental
+description: 'Detects Inter-Process Communication (T1559). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1559/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1559
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - inter-process
+    - communication
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Hijack Execution Flow'
+id: PW-T1574
+status: experimental
+description: 'Detects Hijack Execution Flow (T1574). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1574/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1574
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - hijack
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Lua'
+id: PW-T1059-011
+status: experimental
+description: 'Detects Lua (T1059.011). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, Network Devices, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1059/011/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_011
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1059_011
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Exploitation for Client Execution'
+id: PW-T1203
+status: experimental
+description: 'Detects Exploitation for Client Execution (T1203). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1203/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1203
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - exploitation
+    - client
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: System Services'
+id: PW-T1569
+status: experimental
+description: 'Detects System Services (T1569). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1569/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1569
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - system
+    - services
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Visual Basic'
+id: PW-T1059-005
+status: experimental
+description: 'Detects Visual Basic (T1059.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1059/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1059_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - visual
+    - basic
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Malicious Copy and Paste'
+id: PW-T1204-004
+status: experimental
+description: 'Detects Malicious Copy and Paste (T1204.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1204/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - malicious
+    - paste
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Malicious Link'
+id: PW-T1204-001
+status: experimental
+description: 'Detects Malicious Link (T1204.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1204/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1204_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - malicious
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: At'
+id: PW-T1053-002
+status: experimental
+description: 'Detects At (T1053.002). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1053/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1053_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1053_002
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Dylib Hijacking'
+id: PW-T1574-004
+status: experimental
+description: 'Detects Dylib Hijacking (T1574.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1574/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1574_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - dylib
+    - hijacking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Socket Filters'
+id: PW-T1205-002
+status: experimental
+description: 'Detects Socket Filters (T1205.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1205/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1205_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - socket
+    - filters
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Boot or Logon Initialization Scripts'
+id: PW-T1037
+status: experimental
+description: 'Detects Boot or Logon Initialization Scripts (T1037). Auto-generated
+  from PhantomWatch simulation gap. Platforms: ESXi, Linux, macOS, Network Devices,
+  Windows.'
+references:
+- https://attack.mitre.org/techniques/T1037/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - logon
+    - initialization
+    - scripts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Pluggable Authentication Modules'
+id: PW-T1556-003
+status: experimental
+description: 'Detects Pluggable Authentication Modules (T1556.003). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1556/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - pluggable
+    - authentication
+    - modules
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: External Remote Services'
+id: PW-T1133
+status: experimental
+description: 'Detects External Remote Services (T1133). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1133/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1133
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - external
+    - remote
+    - services
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: LC_LOAD_DYLIB Addition'
+id: PW-T1546-006
+status: experimental
+description: 'Detects LC_LOAD_DYLIB Addition (T1546.006). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_006
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - lc_load_dylib
+    - addition
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Browser Extensions'
+id: PW-T1176-001
+status: experimental
+description: 'Detects Browser Extensions (T1176.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1176/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1176_001
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - browser
+    - extensions
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Software Extensions'
+id: PW-T1176
+status: experimental
+description: 'Detects Software Extensions (T1176). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1176/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1176
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - software
+    - extensions
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Additional Local or Domain Groups'
+id: PW-T1098-007
+status: experimental
+description: 'Detects Additional Local or Domain Groups (T1098.007). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Windows, macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1098/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1098_007
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - additional
+    - local
+    - domain
+    - groups
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Login Hook'
+id: PW-T1037-002
+status: experimental
+description: 'Detects Login Hook (T1037.002). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1037/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_002
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - login
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Traffic Signaling'
+id: PW-T1205
+status: experimental
+description: 'Detects Traffic Signaling (T1205). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1205/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1205
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - traffic
+    - signaling
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Launch Daemon'
+id: PW-T1543-004
+status: experimental
+description: 'Detects Launch Daemon (T1543.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1543/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1543_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - launch
+    - daemon
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Web Shell'
+id: PW-T1505-003
+status: experimental
+description: 'Detects Web Shell (T1505.003). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1505/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1505_003
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Default Accounts'
+id: PW-T1078-001
+status: experimental
+description: 'Detects Default Accounts (T1078.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1078/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1078_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - default
+    - accounts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Trap'
+id: PW-T1546-005
+status: experimental
+description: 'Detects Trap (T1546.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1546/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1546_005
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Local Account'
+id: PW-T1136-001
+status: experimental
+description: 'Detects Local Account (T1136.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1136/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1136_001
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: IDE Extensions'
+id: PW-T1176-002
+status: experimental
+description: 'Detects IDE Extensions (T1176.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1176/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1176_002
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - extensions
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: SSH Authorized Keys'
+id: PW-T1098-004
+status: experimental
+description: 'Detects SSH Authorized Keys (T1098.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Linux, macOS, Network Devices.'
+references:
+- https://attack.mitre.org/techniques/T1098/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1098_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - authorized
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Domain Account'
+id: PW-T1136-002
+status: experimental
+description: 'Detects Domain Account (T1136.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1136/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1136_002
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - domain
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Component Firmware'
+id: PW-T1542-002
+status: experimental
+description: 'Detects Component Firmware (T1542.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1542/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1542_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - component
+    - firmware
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Pre-OS Boot'
+id: PW-T1542
+status: experimental
+description: 'Detects Pre-OS Boot (T1542). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1542/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1542
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - pre-os
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Login Items'
+id: PW-T1547-015
+status: experimental
+description: 'Detects Login Items (T1547.015). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1547/015/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_015
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - login
+    - items
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Port Knocking'
+id: PW-T1205-001
+status: experimental
+description: 'Detects Port Knocking (T1205.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1205/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1205_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - knocking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Compromise Host Software Binary'
+id: PW-T1554
+status: experimental
+description: 'Detects Compromise Host Software Binary (T1554). Auto-generated from
+  PhantomWatch simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1554/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1554
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - compromise
+    - software
+    - binary
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Emond'
+id: PW-T1546-014
+status: experimental
+description: 'Detects Emond (T1546.014). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/014/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_014
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - emond
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Account Manipulation'
+id: PW-T1098
+status: experimental
+description: 'Detects Account Manipulation (T1098). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1098/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1098
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - account
+    - manipulation
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Kernel Modules and Extensions'
+id: PW-T1547-006
+status: experimental
+description: 'Detects Kernel Modules and Extensions (T1547.006). Auto-generated from
+  PhantomWatch simulation gap. Platforms: macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1547/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_006
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - kernel
+    - modules
+    - extensions
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Valid Accounts'
+id: PW-T1078
+status: experimental
+description: 'Detects Valid Accounts (T1078). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS, Network
+  Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1078/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1078
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - valid
+    - accounts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Multi-Factor Authentication'
+id: PW-T1556-006
+status: experimental
+description: 'Detects Multi-Factor Authentication (T1556.006). Auto-generated from
+  PhantomWatch simulation gap. Platforms: IaaS, Identity Provider, Linux, macOS, Office
+  Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1556/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556_006
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - multi-factor
+    - authentication
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Event Triggered Execution'
+id: PW-T1546
+status: experimental
+description: 'Detects Event Triggered Execution (T1546). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows, SaaS, IaaS, Office Suite.'
+references:
+- https://attack.mitre.org/techniques/T1546/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - event
+    - triggered
+    - execution
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Unix Shell Configuration Modification'
+id: PW-T1546-004
+status: experimental
+description: 'Detects Unix Shell Configuration Modification (T1546.004). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+    - configuration
+    - modification
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Startup Items'
+id: PW-T1037-005
+status: experimental
+description: 'Detects Startup Items (T1037.005). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1037/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_005
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - startup
+    - items
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Domain Accounts'
+id: PW-T1078-002
+status: experimental
+description: 'Detects Domain Accounts (T1078.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1078/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1078_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - domain
+    - accounts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Python Startup Hooks'
+id: PW-T1546-018
+status: experimental
+description: 'Detects Python Startup Hooks (T1546.018). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1546/018/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1546_018
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - python
+    - startup
+    - hooks
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Server Software Component'
+id: PW-T1505
+status: experimental
+description: 'Detects Server Software Component (T1505). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS, Network Devices, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1505/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1505
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - server
+    - software
+    - component
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Installer Packages'
+id: PW-T1546-016
+status: experimental
+description: 'Detects Installer Packages (T1546.016). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1546/016/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_016
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - installer
+    - packages
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: RC Scripts'
+id: PW-T1037-004
+status: experimental
+description: 'Detects RC Scripts (T1037.004). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS, Linux, Network Devices, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1037/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1037_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - scripts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Exclusive Control'
+id: PW-T1668
+status: experimental
+description: 'Detects Exclusive Control (T1668). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1668/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1668
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - exclusive
+    - control
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Create Account'
+id: PW-T1136
+status: experimental
+description: 'Detects Create Account (T1136). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, IaaS, Linux, macOS, Network Devices, Containers, SaaS,
+  Office Suite, Identity Provider, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1136/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1136
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - create
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Re-opened Applications'
+id: PW-T1547-007
+status: experimental
+description: 'Detects Re-opened Applications (T1547.007). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1547/007/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1547_007
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - re-opened
+    - applications
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Power Settings'
+id: PW-T1653
+status: experimental
+description: 'Detects Power Settings (T1653). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, Linux, macOS, Network Devices.'
+references:
+- https://attack.mitre.org/techniques/T1653/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1653
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - power
+    - settings
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Modify Authentication Process'
+id: PW-T1556
+status: experimental
+description: 'Detects Modify Authentication Process (T1556). Auto-generated from PhantomWatch
+  simulation gap. Platforms: IaaS, Identity Provider, Linux, macOS, Network Devices,
+  Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1556/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - modify
+    - authentication
+    - process
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Local Accounts'
+id: PW-T1078-003
+status: experimental
+description: 'Detects Local Accounts (T1078.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1078/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.stealth
+- attack.t1078_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - accounts
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Adversary-in-the-Middle'
+id: PW-T1557
+status: experimental
+description: 'Detects Adversary-in-the-Middle (T1557). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1557/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1557
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - adversary-in-the-middle
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Keylogging'
+id: PW-T1056-001
+status: experimental
+description: 'Detects Keylogging (T1056.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1056/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - keylogging
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Password Guessing'
+id: PW-T1110-001
+status: experimental
+description: 'Detects Password Guessing (T1110.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - guessing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: OS Credential Dumping'
+id: PW-T1003
+status: experimental
+description: 'Detects OS Credential Dumping (T1003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credential
+    - dumping
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Steal Web Session Cookie'
+id: PW-T1539
+status: experimental
+description: 'Detects Steal Web Session Cookie (T1539). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1539/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1539
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - steal
+    - session
+    - cookie
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Securityd Memory'
+id: PW-T1555-002
+status: experimental
+description: 'Detects Securityd Memory (T1555.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1555/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1555_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - securityd
+    - memory
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Password Cracking'
+id: PW-T1110-002
+status: experimental
+description: 'Detects Password Cracking (T1110.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Identity Provider, Linux, macOS, Network Devices, Office
+  Suite, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - cracking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Password Managers'
+id: PW-T1555-005
+status: experimental
+description: 'Detects Password Managers (T1555.005). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1555/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1555_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - managers
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Ccache Files'
+id: PW-T1558-005
+status: experimental
+description: 'Detects Ccache Files (T1558.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1558/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1558_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - ccache
+    - files
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Steal or Forge Kerberos Tickets'
+id: PW-T1558
+status: experimental
+description: 'Detects Steal or Forge Kerberos Tickets (T1558). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1558/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1558
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - steal
+    - forge
+    - kerberos
+    - tickets
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Credentials from Web Browsers'
+id: PW-T1555-003
+status: experimental
+description: 'Detects Credentials from Web Browsers (T1555.003). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1555/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1555_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credentials
+    - browsers
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: DHCP Spoofing'
+id: PW-T1557-003
+status: experimental
+description: 'Detects DHCP Spoofing (T1557.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1557/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1557_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - spoofing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Private Keys'
+id: PW-T1552-004
+status: experimental
+description: 'Detects Private Keys (T1552.004). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1552/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1552_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - private
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Password Spraying'
+id: PW-T1110-003
+status: experimental
+description: 'Detects Password Spraying (T1110.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, Network
+  Devices, Office Suite, SaaS, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - password
+    - spraying
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Web Portal Capture'
+id: PW-T1056-003
+status: experimental
+description: 'Detects Web Portal Capture (T1056.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1056/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - portal
+    - capture
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Steal or Forge Authentication Certificates'
+id: PW-T1649
+status: experimental
+description: 'Detects Steal or Forge Authentication Certificates (T1649). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1649/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1649
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - steal
+    - forge
+    - authentication
+    - certificates
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Shell History'
+id: PW-T1552-003
+status: experimental
+description: 'Detects Shell History (T1552.003). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1552/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1552_003
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+    - history
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Web Cookies'
+id: PW-T1606-001
+status: experimental
+description: 'Detects Web Cookies (T1606.001). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Windows, SaaS, IaaS.'
+references:
+- https://attack.mitre.org/techniques/T1606/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1606_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - cookies
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Forge Web Credentials'
+id: PW-T1606
+status: experimental
+description: 'Detects Forge Web Credentials (T1606). Auto-generated from PhantomWatch
+  simulation gap. Platforms: SaaS, Windows, macOS, Linux, IaaS, Office Suite, Identity
+  Provider.'
+references:
+- https://attack.mitre.org/techniques/T1606/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1606
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - forge
+    - credentials
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Multi-Factor Authentication Request Generation'
+id: PW-T1621
+status: experimental
+description: 'Detects Multi-Factor Authentication Request Generation (T1621). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Windows, Linux, macOS, IaaS, SaaS,
+  Office Suite, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1621/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1621
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - multi-factor
+    - authentication
+    - request
+    - generation
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Exploitation for Credential Access'
+id: PW-T1212
+status: experimental
+description: 'Detects Exploitation for Credential Access (T1212). Auto-generated from
+  PhantomWatch simulation gap. Platforms: Linux, Windows, macOS, Identity Provider.'
+references:
+- https://attack.mitre.org/techniques/T1212/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1212
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - exploitation
+    - credential
+    - access
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: GUI Input Capture'
+id: PW-T1056-002
+status: experimental
+description: 'Detects GUI Input Capture (T1056.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1056/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - input
+    - capture
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Brute Force'
+id: PW-T1110
+status: experimental
+description: 'Detects Brute Force (T1110). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS, Network
+  Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - brute
+    - force
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Credential Stuffing'
+id: PW-T1110-004
+status: experimental
+description: 'Detects Credential Stuffing (T1110.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Containers, ESXi, IaaS, Identity Provider, Linux, macOS,
+  Network Devices, Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1110/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1110_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credential
+    - stuffing
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Input Capture'
+id: PW-T1056
+status: experimental
+description: 'Detects Input Capture (T1056). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1056/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - input
+    - capture
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: ARP Cache Poisoning'
+id: PW-T1557-002
+status: experimental
+description: 'Detects ARP Cache Poisoning (T1557.002). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, Windows, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1557/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1557_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - cache
+    - poisoning
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Multi-Factor Authentication Interception'
+id: PW-T1111
+status: experimental
+description: 'Detects Multi-Factor Authentication Interception (T1111). Auto-generated
+  from PhantomWatch simulation gap. Platforms: Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1111/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1111
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - multi-factor
+    - authentication
+    - interception
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+
+title: 'PhantomWatch: Credential API Hooking'
+id: PW-T1056-004
+status: experimental
+description: 'Detects Credential API Hooking (T1056.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1056/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.collection
+- attack.t1056_004
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - credential
+    - hooking
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium
+
+---
+

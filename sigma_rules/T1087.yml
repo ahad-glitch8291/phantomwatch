@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Account Discovery'
+id: PW-T1087
+status: experimental
+description: 'Detects Account Discovery (T1087). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, IaaS, Identity Provider, Linux, macOS, Office Suite,
+  SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1087/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1087
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - account
+    - discovery
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

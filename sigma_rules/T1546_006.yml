@@ -1,0 +1,26 @@
+title: 'PhantomWatch: LC_LOAD_DYLIB Addition'
+id: PW-T1546-006
+status: experimental
+description: 'Detects LC_LOAD_DYLIB Addition (T1546.006). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1546/006/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_006
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - lc_load_dylib
+    - addition
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

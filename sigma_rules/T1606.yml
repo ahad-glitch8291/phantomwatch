@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Forge Web Credentials'
+id: PW-T1606
+status: experimental
+description: 'Detects Forge Web Credentials (T1606). Auto-generated from PhantomWatch
+  simulation gap. Platforms: SaaS, Windows, macOS, Linux, IaaS, Office Suite, Identity
+  Provider.'
+references:
+- https://attack.mitre.org/techniques/T1606/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.credential-access
+- attack.t1606
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - forge
+    - credentials
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

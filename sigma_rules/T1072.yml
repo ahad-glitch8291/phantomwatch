@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Software Deployment Tools'
+id: PW-T1072
+status: experimental
+description: 'Detects Software Deployment Tools (T1072). Auto-generated from PhantomWatch
+  simulation gap. Platforms: Linux, macOS, Network Devices, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1072/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1072
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - software
+    - deployment
+    - tools
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

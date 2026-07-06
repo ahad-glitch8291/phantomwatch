@@ -1,0 +1,27 @@
+title: 'PhantomWatch: Create Account'
+id: PW-T1136
+status: experimental
+description: 'Detects Create Account (T1136). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, IaaS, Linux, macOS, Network Devices, Containers, SaaS,
+  Office Suite, Identity Provider, ESXi.'
+references:
+- https://attack.mitre.org/techniques/T1136/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1136
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - create
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

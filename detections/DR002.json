@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR002",
+  "name": "File and Directory Discovery via ls/find",
+  "technique_ids": ["T1083"],
+  "keywords": ["ls", "find", "dir"],
+  "log_source": "process_creation",
+  "confidence": "medium",
+  "enabled": true
+}

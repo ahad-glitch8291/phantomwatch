@@ -1,0 +1,25 @@
+title: 'PhantomWatch: At'
+id: PW-T1053-002
+status: experimental
+description: 'Detects At (T1053.002). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Windows, Linux, macOS.'
+references:
+- https://attack.mitre.org/techniques/T1053/002/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.execution
+- attack.t1053_002
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1053_002
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

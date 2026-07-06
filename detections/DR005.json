@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR005",
+  "name": "Native API Execution via Python Subprocess",
+  "technique_ids": ["T1106"],
+  "keywords": ["subprocess.Popen", "os.system", "ctypes"],
+  "log_source": "process_creation",
+  "confidence": "medium",
+  "enabled": true
+}

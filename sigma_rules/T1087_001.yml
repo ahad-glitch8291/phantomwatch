@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Local Account'
+id: PW-T1087-001
+status: experimental
+description: 'Detects Local Account (T1087.001). Auto-generated from PhantomWatch
+  simulation gap. Platforms: ESXi, Linux, macOS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1087/001/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.discovery
+- attack.t1087_001
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - local
+    - account
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

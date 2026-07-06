@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR009",
+  "name": "Credential File Access — SSH Keys and History",
+  "technique_ids": ["T1552.001", "T1552"],
+  "keywords": ["id_rsa", "id_ed25519", ".aws/credentials", ".netrc", "bash_history"],
+  "log_source": "file_event",
+  "confidence": "medium",
+  "enabled": true
+}

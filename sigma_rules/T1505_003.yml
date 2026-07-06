@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Web Shell'
+id: PW-T1505-003
+status: experimental
+description: 'Detects Web Shell (T1505.003). Auto-generated from PhantomWatch simulation
+  gap. Platforms: Linux, macOS, Network Devices, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1505/003/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1505_003
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - shell
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

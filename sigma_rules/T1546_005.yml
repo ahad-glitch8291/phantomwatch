@@ -1,0 +1,25 @@
+title: 'PhantomWatch: Trap'
+id: PW-T1546-005
+status: experimental
+description: 'Detects Trap (T1546.005). Auto-generated from PhantomWatch simulation
+  gap. Platforms: macOS, Linux.'
+references:
+- https://attack.mitre.org/techniques/T1546/005/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.privilege-escalation
+- attack.t1546_005
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - t1546_005
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

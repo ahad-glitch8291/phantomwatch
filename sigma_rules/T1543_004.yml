@@ -1,0 +1,26 @@
+title: 'PhantomWatch: Launch Daemon'
+id: PW-T1543-004
+status: experimental
+description: 'Detects Launch Daemon (T1543.004). Auto-generated from PhantomWatch
+  simulation gap. Platforms: macOS.'
+references:
+- https://attack.mitre.org/techniques/T1543/004/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.persistence
+- attack.t1543_004
+logsource:
+  category: file_event
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - launch
+    - daemon
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

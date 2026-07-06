@@ -1,0 +1,28 @@
+title: 'PhantomWatch: Modify Authentication Process'
+id: PW-T1556
+status: experimental
+description: 'Detects Modify Authentication Process (T1556). Auto-generated from PhantomWatch
+  simulation gap. Platforms: IaaS, Identity Provider, Linux, macOS, Network Devices,
+  Office Suite, SaaS, Windows.'
+references:
+- https://attack.mitre.org/techniques/T1556/
+author: PhantomWatch (auto-generated)
+date: 2026/07/06
+tags:
+- attack.defense-impairment
+- attack.t1556
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    CommandLine|contains:
+    - modify
+    - authentication
+    - process
+  condition: selection
+falsepositives:
+- Legitimate administrative activity
+- Security tooling and scanners
+- Developer environments
+level: medium

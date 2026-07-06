@@ -1,0 +1,15 @@
+phantomwatch:
+  version: "1.0.0"
+  author: "Ahad"
+  log_level: "INFO"
+  output_dir: "reports"
+  sigma_output: "sigma_rules"
+
+mitre:
+  attack_version: "14.0"
+  default_tactics:
+    - discovery
+    - execution
+    - persistence
+    - lateral_movement
+    - exfiltration
