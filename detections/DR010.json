@@ -1,0 +1,9 @@
+{
+  "rule_id": "DR010",
+  "name": "Test Rule for CI/CD",
+  "technique_ids": ["T1234.567"],
+  "keywords": ["test", "cicd"],
+  "log_source": "process_creation",
+  "confidence": "high",
+  "enabled": true
+}
